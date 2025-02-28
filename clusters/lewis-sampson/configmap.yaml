@@ -1,0 +1,76 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-example-config
+  namespace: capi-self
+data:
+  values.yaml: |
+    # Must match the name of the (sealed) secret in credentials.yaml
+    cloudCredentialsSecretName: ls-dev-cluster-credentials
+
+    kubernetesVersion: 1.30.8
+    machineImageId: "3d49b731-1aa7-424a-8b65-f26aea06e5c6" # capi-ubuntu-2204-kube-v1.30.8-2025-01-24
+
+    clusterNetworking:
+      externalNetworkId: "5283f642-8bd8-48b6-8608-fa3006ff4539"
+    
+    kubeNetwork:
+      pods:
+        cidrBlocks:
+          - 10.0.0.0/13
+      services:
+        cideBlocks:
+          - 10.8.0.0/13
+
+    apiServer:
+      floatingIP: "130.246.83.98"
+
+    registryMirrors:
+      docker.io:
+        - https://dockerhub.stfc.ac.uk
+          
+    controlPlane:
+      machineFlavor: "l3.nano"
+      machineCount: 3
+
+    nodeGroups:
+      - name: md-0
+        machineFlavor: "l3.micro"
+        machineCount: 3
+
+    addons:
+      # Use the cilium CNI
+      cni:
+        type: cilium
+        cilium:
+          release:
+            values:
+              gatewayAPI:
+                enabled: true
+
+      csi:
+        cephfs:
+          enabled: true
+
+      openstack:
+        csiCinder:
+          defaultStorageClass:
+            availabilityZone: ceph
+        csiManila:
+          enabled: true
+          defaultStorageClass:
+            parameters:
+              type: cephfs
+
+      # Enable the monitoring stack
+      monitoring:
+        enabled: true
+
+      # Disable NFD and the NVIDIA/Mellanox operators
+      nodeFeatureDiscovery:
+        enabled: false
+      nvidiaGPUOperator:
+        enabled: false
+      mellanoxNetworkOperator:
+        enabled: false
