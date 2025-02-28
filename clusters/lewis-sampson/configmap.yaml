@@ -10,10 +10,10 @@ data:
     cloudCredentialsSecretName: ls-dev-cluster-credentials
 
     kubernetesVersion: 1.30.8
-    machineImageId: "3d49b731-1aa7-424a-8b65-f26aea06e5c6" # capi-ubuntu-2204-kube-v1.30.8-2025-01-24
+    machineImageId: 3d49b731-1aa7-424a-8b65-f26aea06e5c6 # capi-ubuntu-2204-kube-v1.30.8-2025-01-24
 
     clusterNetworking:
-      externalNetworkId: "5283f642-8bd8-48b6-8608-fa3006ff4539"
+      externalNetworkId: 5283f642-8bd8-48b6-8608-fa3006ff4539
     
     kubeNetwork:
       pods:
@@ -31,12 +31,12 @@ data:
         - https://dockerhub.stfc.ac.uk
           
     controlPlane:
-      machineFlavor: "l3.nano"
+      machineFlavor: l3.nano
       machineCount: 3
 
     nodeGroups:
       - name: md-0
-        machineFlavor: "l3.micro"
+        machineFlavor: l3.micro
         machineCount: 3
 
     addons:
@@ -68,9 +68,9 @@ data:
         enabled: true
 
       # Disable NFD and the NVIDIA/Mellanox operators
-      nodeFeatureDiscovery:
-        enabled: false
-      nvidiaGPUOperator:
-        enabled: false
-      mellanoxNetworkOperator:
-        enabled: false
+      #      nodeFeatureDiscovery:
+      #  enabled: false
+      #nvidiaGPUOperator:
+      #  enabled: false
+      #mellanoxNetworkOperator:
+      #  enabled: false
