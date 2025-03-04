@@ -24,7 +24,7 @@ data:
           - 10.8.0.0/13
 
     apiServer:
-      floatingIP: "130.246.80.184"
+      floatingIP: "130.246.83.239"
 
     registryMirrors:
       docker.io:
