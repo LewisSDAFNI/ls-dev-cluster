@@ -1,5 +1,3 @@
-bases:
-  - starwars-app/
 resources:
   - ../../components/flux
   - ../../components/sealed-secrets
