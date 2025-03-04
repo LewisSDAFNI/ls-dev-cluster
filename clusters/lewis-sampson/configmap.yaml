@@ -24,7 +24,7 @@ data:
           - 10.8.0.0/13
 
     apiServer:
-      floatingIP: ""
+      floatingIP: "5283f642-8bd8-48b6-8608-fa3006ff4539"
 
     registryMirrors:
       docker.io:
@@ -37,7 +37,7 @@ data:
     nodeGroups:
       - name: md-0
         machineFlavor: l3.micro
-        machineCount: 3
+        machineCount: 2
 
     addons:
       # Use the cilium CNI
@@ -67,10 +67,3 @@ data:
       monitoring:
         enabled: true
 
-      #  Disable NFD and the NVIDIA/Mellanox operators
-            nodeFeatureDiscovery:
-        enabled: false
-      nvidiaGPUOperator:
-        enabled: false
-      mellanoxNetworkOperator:
-        enabled: false
