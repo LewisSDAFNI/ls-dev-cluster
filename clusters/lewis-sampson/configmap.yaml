@@ -24,7 +24,7 @@ data:
           - 10.8.0.0/13
 
     apiServer:
-      floatingIP: "130.246.83.98"
+      floatingIP: ""
 
     registryMirrors:
       docker.io:
@@ -67,10 +67,10 @@ data:
       monitoring:
         enabled: true
 
-      # Disable NFD and the NVIDIA/Mellanox operators
-      #      nodeFeatureDiscovery:
-      #  enabled: false
-      #nvidiaGPUOperator:
-      #  enabled: false
-      #mellanoxNetworkOperator:
-      #  enabled: false
+      #  Disable NFD and the NVIDIA/Mellanox operators
+            nodeFeatureDiscovery:
+        enabled: false
+      nvidiaGPUOperator:
+        enabled: false
+      mellanoxNetworkOperator:
+        enabled: false
