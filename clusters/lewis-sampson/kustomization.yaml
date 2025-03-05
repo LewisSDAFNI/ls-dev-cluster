@@ -5,7 +5,7 @@ resources:
   - ../../components/cluster
   - configmap.yaml
   - credentials-sealed.yaml
-  - starwars-app/kustomization.yaml
+  - starwars-app
 # Patch the Helm release for the cluster to update the release name
 #   This ensures we get nicely named resources in OpenStack
 # We also add our configmap to the values sources for the release
