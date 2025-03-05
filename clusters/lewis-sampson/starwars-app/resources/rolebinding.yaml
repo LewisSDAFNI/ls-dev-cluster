@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: role-bindings
+  namespace: starwars-app
+spec:
+  # Comments after a value below are being used to find and replace values in
+  # CI/CD jobs. Please do not remove them or change them
+  chart:
+    spec:
+      chart: dafni-k8s-roles
+      interval: 1m
+      version: "0.0.8" # RolesHelmChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: stfc-harbor
+        namespace: flux-system
+  interval: 1m
+  install:
+    remediation:
+      retries: 3
+  values:
+    contributor:
+      enabled: true
