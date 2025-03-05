@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: stfc-harbor
+  namespace: flux-system
+spec:
+  # Since we used STFC Harbor for our helm charts and they get uploaded and 
+  # deployed as part of a pipeline we need to check the helm repo more frequently
+  # than 10 minutes. 
+  interval: 1m
+  url: https://harbor.stfc.ac.uk/chartrepo/dafni-platform
+  secretRef:
+    name: stfc-harbor-account
