@@ -3,6 +3,7 @@ resources:
   - ../../components/sealed-secrets
   - ../../components/cluster-api
   - ../../components/cluster
+  - helm
   - configmap.yaml
   - credentials-sealed.yaml
   - starwars-app
