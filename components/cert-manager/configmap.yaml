@@ -7,3 +7,6 @@ metadata:
 data:
   values.yaml: |
     installCRDs: true
+    prometheus:
+      enabled: true
+    featureGates: "ExperimentalGatewayAPISupport=true"
