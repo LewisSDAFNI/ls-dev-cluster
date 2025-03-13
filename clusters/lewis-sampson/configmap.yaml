@@ -48,6 +48,8 @@ data:
             values:
               gatewayAPI:
                 enabled: true
+              bgpControlPlane:
+                enabled: true
 
       csi:
         cephfs:
