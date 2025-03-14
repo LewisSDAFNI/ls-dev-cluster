@@ -20,7 +20,7 @@ data:
         cidrBlocks:
           - 10.0.0.0/13
       services:
-        cideBlocks:
+        cidrBlocks:
           - 10.8.0.0/13
 
     apiServer:
