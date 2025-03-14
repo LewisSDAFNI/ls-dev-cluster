@@ -1,8 +1,8 @@
 resources:
-  # - ../../components/flux
-  # - ../../components/sealed-secrets
-  # - ../../components/cluster-api
-  # - ../../components/cluster
+  - ../../components/flux
+  - ../../components/sealed-secrets
+  - ../../components/cluster-api
+  - ../../components/cluster
   # - helm
   - configmap.yaml
   - credentials-sealed.yaml
