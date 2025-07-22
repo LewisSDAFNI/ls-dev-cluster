@@ -31,12 +31,12 @@ data:
         - https://dockerhub.stfc.ac.uk
           
     controlPlane:
-      machineFlavor: l3.nano
+      machineFlavor: l3.micro
       machineCount: 3
 
     nodeGroups:
       - name: md-0
-        machineFlavor: l3.micro
+        machineFlavor: l3.xsmall
         machineCount: 4
 
     addons:
