@@ -37,7 +37,7 @@ data:
     nodeGroups:
       - name: md-0
         machineFlavor: l3.xsmall
-        machineCount: 4
+        machineCount: 3
 
     addons:
       # Use the cilium CNI
