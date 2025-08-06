@@ -13,6 +13,8 @@ data:
     machineImageId: 3d49b731-1aa7-424a-8b65-f26aea06e5c6 # capi-ubuntu-2204-kube-v1.30.8-2025-01-24
 
     clusterNetworking:
+      internalNetwork: 
+        nodeCidr: 192.168.128.0/17
       externalNetworkId: 5283f642-8bd8-48b6-8608-fa3006ff4539
     
     kubeNetwork:
