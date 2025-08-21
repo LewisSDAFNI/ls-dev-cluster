@@ -5,6 +5,7 @@ resources:
   - ../../components/cluster
   # - helm
   - flux-branch.yaml
+  - kustomization-crds.yaml
   - configmap.yaml
   - credentials-sealed.yaml
   # - starwars-app
