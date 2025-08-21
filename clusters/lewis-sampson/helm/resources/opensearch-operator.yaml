@@ -1,4 +1,13 @@
 ---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: opensearch-operator
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  url: https://opensearch-project.github.io/opensearch-k8s-operator/
+---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
