@@ -4,6 +4,7 @@ resources:
   - ../../components/cluster-api
   - ../../components/cluster
   # - helm
+  - flux-branch.yaml
   - configmap.yaml
   - credentials-sealed.yaml
   # - starwars-app
