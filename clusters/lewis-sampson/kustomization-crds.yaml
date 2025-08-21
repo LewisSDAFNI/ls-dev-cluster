@@ -1,0 +1,15 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: crds
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  path: ./clusters/lewis-sampson/helm
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: lewis-sampson
+  dependsOn:
+    - name: lewis-sampson
