@@ -22,7 +22,7 @@ spec:
   path: ./
   prune: true
   dependsOn:
-    name: crds
+  - name: crds
   sourceRef:
     kind: GitRepository
     name: flux-capacitor
