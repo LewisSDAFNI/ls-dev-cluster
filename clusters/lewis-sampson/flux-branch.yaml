@@ -19,8 +19,10 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m0s
-  path: ./kustomization.yaml
+  path: ./
   prune: true
+  dependsOn:
+    name: crds
   sourceRef:
     kind: GitRepository
     name: flux-capacitor
