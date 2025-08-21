@@ -4,3 +4,4 @@ resources:
   - resources/namespace.yaml
   - resources/opensearch-operator.yaml
   - resources/vault.yaml
+  - resources/argo.yaml
