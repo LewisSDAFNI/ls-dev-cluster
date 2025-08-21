@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - resources/namespace.yaml
   - resources/opensearch-operator.yaml
-  - resources/vault-agent.yaml
+  - resources/vault.yaml
