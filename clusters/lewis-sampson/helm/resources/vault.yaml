@@ -24,8 +24,38 @@ spec:
         namespace: flux-system
       interval: 30m
   interval: 60m
+  values:
+    global:
+      namespace: vault-dev
+      externalVaultAddr: https://vault-dev.dafni.rl.ac.uk:8200
+    injector:
+      enabled: true
+      metrics:
+        enabled: true
+      extraEnvironmentVars:
+        VAULT_CACERT: /etc/vault-ca-cert/ca.crt
+      volumes:
+        - name: vault-ca
+          configMap:
+            name: vault-prod-ca-cert
+      volumeMounts:
+        - name: vault-ca
+          mountPath: /etc/vault-ca-cert
+    server:
+      enabled: true
+      extraEnvironmentVars:
+        VAULT_CACERT: /etc/vault-ca-cert/ca.crt
+      volumes:
+        - name: vault-ca
+          configMap:
+            name: vault-prod-ca-cert
+      volumeMounts:
+        - name: vault-ca
+          mountPath: /etc/vault-ca-cert
   install:
     crds: CreateReplace
+  upgrade:
+    crds: Create
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
