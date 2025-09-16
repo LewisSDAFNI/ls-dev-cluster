@@ -11,7 +11,8 @@ data:
 
     kubernetesVersion: 1.30.8
     # machineImageId: 3d49b731-1aa7-424a-8b65-f26aea06e5c6 # capi-ubuntu-2204-kube-v1.30.8-2025-01-24
-    machineImageId: 6d5e9e02-7025-4d76-971c-eedf3a327d03 # capi-ubuntu-2204-kube-v1.30.8-2025-01-24
+    # machineImageId: 6d5e9e02-7025-4d76-971c-eedf3a327d03 # capi-ubuntu-2204-kube-v1.30.8-2025-01-24
+    machineImageId: 49a08c67-dff2-424b-a2ca-6f4a027e2345 # capi-ubuntu-2204-kube-v1.30.14-2025-08-27
     clusterNetworking:
       internalNetwork: 
         nodeCidr: 192.168.128.0/17
