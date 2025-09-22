@@ -6,7 +6,13 @@ metadata:
   namespace: cert-manager
 data:
   values.yaml: |
-    installCRDs: true
+    logLevel: 6
     prometheus:
       enabled: true
-    featureGates: "ExperimentalGatewayAPISupport=true"
+      servicemontior:
+        enabled: true
+        namespace: monitoring
+        interval: 30s
+    installCRDs: true
+    config:
+      enableGatewayAPI: true
