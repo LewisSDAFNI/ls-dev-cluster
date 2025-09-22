@@ -47,6 +47,8 @@ data:
       cni:
         type: cilium
         cilium:
+          chart:
+            version: 1.17.1
           release:
             values:
               gatewayAPI:
